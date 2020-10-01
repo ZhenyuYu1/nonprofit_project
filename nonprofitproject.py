@@ -1,49 +1,48 @@
-choice1 = 0;
-choice2 = 0;
-choice3 = 0;
 def displayIntro():
   #put an Introduction message to the users
-    donate = input("Hello! Would you like to donate to a non-profit?(Y/N)")
-    if donate == "Y":
-        displayNonProfits()
-    elif donate == "N":
-        print("Have a nice day.")
-    else:
-        print("I don't understand.")
+    print("Hi. Welcome to our donation page. Here you can choose non-profits and donate money to them.")
 
 def displayNonProfits():
   #print all the non-profits to the screen numerically. For Example:
 #    1. World Central Kitchen
 #    2. Crisis Text Line
 #    3. Heart to Heart International
-    while donate = "Y":
-        print("1.World Central Kitchen")
-        print("2.Crisis Text Line")
-        print("3.Heart to Heart International")
-        choice = int(input("Enter the number of the non-profit you would like to donate to: "))
-        amount = int(input("Enter the amount of money you would like to donate: "))
-        if choice == 1:
-            choice1 += amount
-            print(f"The World Central Kitchen has received {amount} and now has a total of {choice1}")
-        elif choice == 2:
-            choice2 += amount
-            print(f"The Crisis Text Line has received {amount} and now has a total of {choice2}")
-        else:
-            choice3 += amount
-            print(f"The Heart to Heart Inter has received {amount} and now has a total of {choice3}")
-        donate = input("Would you like to donate to another non-profit?(Y/N)")
-        if donate == "Y":
-            displayNonProfits()
+    donate = input("Would you like to donate to a non-profit?(Y/N)")
+    
+def main():
+    displayIntro()
+    displayNonProfits()
+    choice1 = 0;
+    choice2 = 0;
+    choice3 = 0;
+    donate = "Y"
+    if donate == "Y":
+        while donate == "Y":
+            print("1.World Central Kitchen")
+            print("2.Crisis Text Line")
+            print("3.Heart to Heart International")
+            choice = int(input("Enter the number of the non-profit you would like to donate to: "))
+            amount = int(input("Enter the amount of money you would like to donate: "))
+            if choice == 1:
+                choice1 += amount
+                print(f"The World Central Kitchen has received {amount} and now has a total of {choice1}")
+            elif choice == 2:
+                choice2 += amount
+                print(f"The Crisis Text Line has received {amount} and now has a total of {choice2}")
+            else:
+                choice3 += amount
+                print(f"The Heart to Heart International has received {amount} and now has a total of {choice3}")
+            donate = input("Would you like to donate to another non-profit?(Y/N)")
+            if donate == "Y":
+                displayNonProfits()
             elif donate == "N":
                 print("Have a nice day.")
             else:
                 print("I don't understand.")
-
-
-def main():
-    displayIntro()
-    while donate == "Y":
-        displayNonProfits()
+    elif donate == "N":
+          print("Have a nice day.")
+    else:
+          print("I don't understand.")
 
 main()
     
